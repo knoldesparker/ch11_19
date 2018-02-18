@@ -25,8 +25,17 @@ public class Main {
                rareMap.put(i,1);
            }
        }
-        System.out.println(rareMap); //prin out the rare map
-        
+       // System.out.println(rareMap); //prin out the rare map
 
+        Collection<Integer> inters = rareMap.values();
+        int temp = 0;
+        for (int i = 0; i < inters.size(); i++) {
+            temp = Math.min(i,temp);
+        }
+        if (rareMap.isEmpty()){
+            System.out.println(0);
+        }
+        System.out.println(rareMap);
+        System.out.println(temp);
     }
 }
