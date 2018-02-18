@@ -25,17 +25,19 @@ public class Main {
                rareMap.put(i,1);
            }
        }
-       // System.out.println(rareMap); //prin out the rare map
+        System.out.println(rareMap); //prin out the rare map
 
-        Collection<Integer> inters = rareMap.values();
-        int temp = 0;
-        for (int i = 0; i < inters.size(); i++) {
-            temp = Math.min(i,temp);
+        Set<Integer> set = rareMap.keySet(); //Makes a set out of the rareMap Keyset
+        Iterator<Integer> intItr = set.iterator(); //Put an Iterator on the set
+        int rare = intItr.next(); //Puts a min int on the iterator
+
+        while (intItr.hasNext()){
+            int temp = intItr.next(); //temp int to keep track of position
+            if (rareMap.get(temp) < rareMap.get(rare)){ // if temp is smaller than min value set min to the smaller value
+                rare = temp;
+            }
+            System.out.println(rare); //Prin out the rares value in the map
         }
-        if (rareMap.isEmpty()){
-            System.out.println(0);
-        }
-        System.out.println(rareMap);
-        System.out.println(temp);
+
     }
 }
