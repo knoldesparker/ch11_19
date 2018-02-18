@@ -17,15 +17,16 @@ public class Main {
         Map<Integer, Integer> rareMap = new TreeMap<>();
         Iterator<String> itr = map.keySet().iterator();
 
-       while (itr.hasNext()){
-           int i = map.get(itr.next());
-           if (rareMap.containsKey(i)){
-               rareMap.put(i,rareMap.get(i)+1);
-           }else {
+       while (itr.hasNext()){ //while loop for serching the map
+           int i = map.get(itr.next()); //sets the itr to the map keyset
+           if (rareMap.containsKey(i)){ //if the rare map contains a value from the start map
+               rareMap.put(i,rareMap.get(i)+1); //up the value and occurece in the raremap
+           }else { //if none is found put the value and occor to 1
                rareMap.put(i,1);
            }
        }
-        System.out.println(rareMap);
+        System.out.println(rareMap); //prin out the rare map
+        
 
     }
 }
